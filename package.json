@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "homepage": "https://darkartyom.github.io/Hogwarts/",
-=======
-  "homepage": "darkartyom.github.io/Hogwarts/",
->>>>>>> 45864193feeb69bc0be8ee79f34897d3d8d9daa9
   "name": "hogwarts",
   "private": true,
   "version": "0.0.0",
