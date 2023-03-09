@@ -1,17 +1,38 @@
-import { Container } from "../Layout/Layout.styled";
-import { StyledButton, AwatarImg } from "./AppBarStyled";
-export const AppBar = ({ user, logOut }) => {
+import { Container } from '../Layout/Layout.styled';
+import { AwatarImg, Button, WrapBar, BarText } from './AppBarStyled';
+
+import { ToggleSwitch } from '../../Services/Switch/ToggleSwitch';
+import PropTypes from 'prop-types';
+import { ImExit } from 'react-icons/im';
+
+export const AppBar = ({ user, logOut, theme }) => {
   return (
     <Container>
       {user ? (
-        <div>
-          <AwatarImg></AwatarImg>
-          <p>{`Signed In as ${user.email}`}</p>
-          <StyledButton onClick={logOut}>Leave</StyledButton>
-        </div>
+        <WrapBar>
+          <ToggleSwitch theme={theme} />
+          <WrapBar>
+            <BarText>{`Signed In as ${user.email}`}</BarText>
+            <AwatarImg></AwatarImg>
+          </WrapBar>
+          <Button onClick={logOut}>
+            <ImExit
+              style={{
+                fontSize: 25,
+                color: `red`,
+              }}
+            />
+          </Button>
+        </WrapBar>
       ) : (
         <p>Signed Out</p>
       )}
     </Container>
   );
+};
+
+AppBar.propType = {
+  user: PropTypes.object,
+  logOut: PropTypes.func,
+  theme: PropTypes.func,
 };

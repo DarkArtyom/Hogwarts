@@ -23,12 +23,12 @@ export const Container = styled.div`
 `;
 
 export const Nav = styled.nav`
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   @media screen and (min-width: 1200px) {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 `;
 
@@ -38,7 +38,7 @@ export const StyledLink = styled(NavLink)`
   display: inline-block;
   background-color: transparent;
   text-decoration: none;
-  color: white;
+  color: ${({ theme }) => theme.text};
   position: relative;
   padding: 5px 10px;
   border: 1px solid;
@@ -59,7 +59,6 @@ export const StyledLink = styled(NavLink)`
     height: 0;
     width: 100%;
     z-index: -1;
-    color: white;
     background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
     transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
@@ -74,15 +73,6 @@ export const StyledLink = styled(NavLink)`
     top: auto;
     height: 100%;
   }
-
-  /* &.active {
-    background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
-  }
-  :hover:not(.active),
-  :focus-visible:not(.active) {
-    background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
-    color: black;
-  } */
 
   @media screen and (min-width: 1200px) {
     display: inline-block;

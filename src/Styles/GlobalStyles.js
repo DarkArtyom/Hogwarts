@@ -1,6 +1,6 @@
-import { css } from '@emotion/react';
-import img from './dining-room-web-min.jpg';
-export const GlobalStyles = css`
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyles = createGlobalStyle`
   html {
     box-sizing: border-box;
   }
@@ -14,19 +14,20 @@ export const GlobalStyles = css`
     margin: 0;
     height: 100vh;
     font-size: normal;
-    background-color: #61677c;
-    background-image: url(${img});
+    font-size: 14px;
+    background-color: ${({ theme }) => theme.text};
+    background-image: url(${({ theme }) => theme.body});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     overflow-y: auto;
-    color: white;
+    color: ${({ theme }) => theme.text};
 
-    /* @media screen and (min-width: 480px) {
-      background-image: url(/src/images/dining-room-web-min.jpg);
+    @media screen and (min-width: 480px) {
+      background-image: url(${({ theme }) => theme.body});
       background-position: cover;
-    } */
+    }
   }
 
   h1,
@@ -43,5 +44,23 @@ export const GlobalStyles = css`
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-`;
+  }`;
+
+export const lightTheme = {
+  body: '/images/bg-castle-web-min.jpg',
+  text: '#121620',
+  button: '#61677c',
+  buttonText: '#ebecf0',
+};
+
+export const darkTheme = {
+  body: '/images/dining-room-web-min.jpg',
+  text: '#f1f1f1',
+  button: '#ebecf0',
+  buttonText: '#61677c',
+};
+
+// const flexCenter = `
+// display: flex;
+//   align-items: center;
+//   justify-content: center; `;

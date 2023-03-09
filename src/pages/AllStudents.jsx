@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { fetchAllStudents } from "../Services/fetches";
-import CircleLoader from "react-spinners/CircleLoader";
-import { Container } from "../components/Layout/Layout.styled";
+import { useEffect, useState } from 'react';
+import { fetchAllStudents } from '../Services/fetches';
+import CircleLoader from 'react-spinners/CircleLoader';
+import { Container } from '../components/Layout/Layout.styled';
 
 export const AllStudents = () => {
   const [students, setStudents] = useState([]);
@@ -17,7 +17,7 @@ export const AllStudents = () => {
         if (!dataFetch) {
           return;
         }
-        setStudents((prev) => [...prev, ...dataFetch.data]);
+        setStudents(prev => [...prev, ...dataFetch.data]);
         console.log(dataFetch.data);
       } catch (error) {
         throw new Error(error);
@@ -36,12 +36,12 @@ export const AllStudents = () => {
   }, [students]);
 
   return (
-    <>
+    <main>
       <Container
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         {loading ? (
@@ -54,6 +54,6 @@ export const AllStudents = () => {
           </ul>
         )}
       </Container>
-    </>
+    </main>
   );
 };
