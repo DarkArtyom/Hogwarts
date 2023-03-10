@@ -23,6 +23,11 @@ export const Button = styled.button`
   cursor: pointer;
   margin: 0;
   padding: 0;
+  font-size: 25px;
+  color: red;
+  &:hover {
+    color: blue;
+  }
 `;
 
 export const BarText = styled.p`

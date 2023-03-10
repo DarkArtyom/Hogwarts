@@ -51,6 +51,8 @@ export const lightTheme = {
   text: '#121620',
   button: '#61677c',
   buttonText: '#ebecf0',
+  tableColor: '#FFEBCD',
+  tableHeadColor: '#008b8b',
 };
 
 export const darkTheme = {
@@ -58,9 +60,12 @@ export const darkTheme = {
   text: '#f1f1f1',
   button: '#ebecf0',
   buttonText: '#61677c',
+  tableColor: '#F0FFFF',
+  tableHeadColor: '#5F9EA0',
 };
 
-// const flexCenter = `
-// display: flex;
-//   align-items: center;
-//   justify-content: center; `;
+export const flexCenter = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+};

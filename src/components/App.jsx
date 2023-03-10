@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { AllStudents } from '../pages/AllStudents';
+import { AllStaff } from '../pages/AllStuff';
 import { NotFound } from '../pages/NotFound';
 import { SignIn } from './Auth/SignIn';
 import { SignUp } from './Auth/SignUp';
@@ -34,10 +34,10 @@ export const App = () => {
               }
             >
               <Route
-                path="/all-students"
+                path="/all-staff"
                 element={
                   <ProtectedRoute>
-                    <AllStudents />
+                    <AllStaff />
                   </ProtectedRoute>
                 }
               />

@@ -16,12 +16,7 @@ export const AppBar = ({ user, logOut, theme }) => {
             <AwatarImg></AwatarImg>
           </WrapBar>
           <Button onClick={logOut}>
-            <ImExit
-              style={{
-                fontSize: 25,
-                color: `red`,
-              }}
-            />
+            <ImExit />
           </Button>
         </WrapBar>
       ) : (

@@ -34,7 +34,6 @@ export const Nav = styled.nav`
 
 export const StyledLink = styled(NavLink)`
   text-decoration: none;
-
   display: inline-block;
   background-color: transparent;
   text-decoration: none;
@@ -63,8 +62,12 @@ export const StyledLink = styled(NavLink)`
     transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
+  &.active {
+    background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+  }
+
   &:hover {
-    .sliding-button:hover {
+    &.sliding-button:hover {
       background: rgba(255, 255, 255, 0);
     }
   }

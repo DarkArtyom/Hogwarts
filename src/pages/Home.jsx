@@ -20,13 +20,15 @@ export const Home = ({ toggleTheme }) => {
   };
 
   return (
-    <header>
-      <Section>
-        <AppBar theme={toggleTheme} user={user} logOut={handleLogout} />
-        <Layout />
-        <Outlet />
-      </Section>
-    </header>
+    <>
+      <header>
+        <Section>
+          <AppBar theme={toggleTheme} user={user} logOut={handleLogout} />
+          <Layout />
+        </Section>
+      </header>
+      <Outlet />
+    </>
   );
 };
 

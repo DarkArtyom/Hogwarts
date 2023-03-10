@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { fetchAllStudents } from '../Services/fetches';
-import CircleLoader from 'react-spinners/CircleLoader';
-import { Container } from '../components/Layout/Layout.styled';
+// import CircleLoader from 'react-spinners/CircleLoader';
+// import { Container } from '../components/Layout/Layout.styled';
+import { AllPersons } from '../components/AllPersons/AllPersons';
 
-export const AllStudents = () => {
+export const AllStaff = () => {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -37,23 +38,7 @@ export const AllStudents = () => {
 
   return (
     <main>
-      <Container
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        {loading ? (
-          <CircleLoader color="#36d7b7" />
-        ) : (
-          <ul>
-            {students.map(({ id, name }) => (
-              <li key={id}>{name}</li>
-            ))}
-          </ul>
-        )}
-      </Container>
+      <AllPersons isLoading={loading} students={students} />
     </main>
   );
 };

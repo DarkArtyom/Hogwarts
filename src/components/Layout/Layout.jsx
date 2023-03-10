@@ -13,7 +13,7 @@ export const Layout = () => {
       <Nav>
         <LinkList>
           <ListItem>
-            <StyledLink to="/all-students">All Students</StyledLink>
+            <StyledLink to="/all-staff">All Staff</StyledLink>
           </ListItem>
           <ListItem>
             <StyledLink to="/slytherin">Slytherin</StyledLink>
