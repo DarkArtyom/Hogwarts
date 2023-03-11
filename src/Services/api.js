@@ -4,5 +4,5 @@ export const API = {
   hufflepuffHouse: `https://hp-api.onrender.com/api/characters/house/hufflepuff`,
   ravenclawHouse: `https://hp-api.onrender.com/api/characters/house/ravenclaw`,
   slytherinHouse: `https://hp-api.onrender.com/api/characters/house/slytherin`,
-  allSpells: 'https://hp-api.herokuapp.com/api/spells',
+  allSpells: 'https://hp-api.onrender.com/api/spells',
 };

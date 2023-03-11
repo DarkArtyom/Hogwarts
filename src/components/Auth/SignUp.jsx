@@ -23,10 +23,11 @@ export const SignUp = () => {
 
     try {
       await signUp(email, password);
-      navigate('/singin');
+      navigate('/signin');
+      toast.success('Yoy have successful registered');
     } catch (err) {
       console.log(err.message);
-      toast('Not valid email or password');
+      toast.error('Not valid email or password');
     }
   };
   return (

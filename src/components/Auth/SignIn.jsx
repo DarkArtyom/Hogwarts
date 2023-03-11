@@ -24,9 +24,10 @@ export const SignIn = () => {
     try {
       await logIn(email, password);
       navigate('/');
+      toast.success('Yoy have successful signed in');
     } catch (err) {
       console.log(err);
-      toast('Wrong email or password');
+      toast.error('Wrong email or password');
     }
   };
 

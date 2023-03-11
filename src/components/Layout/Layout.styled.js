@@ -101,9 +101,6 @@ export const LinkList = styled.ul`
       justify-content: center;
       margin-bottom: 30px;
     }
-    @media screen and (min-width: 1200px) {
-      margin-bottom: 50px;
-    }
   }
 `;
 

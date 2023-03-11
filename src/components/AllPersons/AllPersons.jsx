@@ -6,20 +6,46 @@ import { Table } from './StyledAllPersons';
 import { ScrollButton } from '../../Services/ButtonUp/Button.Up';
 import { nanoid } from 'nanoid';
 import { Modal } from '../Modal/Modal';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PersonDetails } from '../PersonDetails/PersonDetails';
 import { TableHead } from './ItemsPersons/TableHead';
+import { parseDataFromLS } from '../../Services/LS/parseDataFromLS';
+import { userId } from '../../Services/auth/fireBase';
+import { toast } from 'react-toastify';
 
 export const AllPersons = ({ isLoading, students }) => {
-  const [modalActive, setModalActive] = useState(true);
   const [personId, setPersonId] = useState('');
+  const [heroes, setHeroes] = useState(() =>
+    parseDataFromLS(`${userId}`, userId)
+  );
+  const [isInLs, setIsInLs] = useState(false);
+  const [modalActive, setModalActive] = useState(true);
 
-  const handleClick = id => {
-    setPersonId(id);
-    setModalActive(!true);
+  useEffect(() => {
+    localStorage.setItem(`${userId}`, JSON.stringify(heroes));
+  }, [heroes]);
+
+  const addRemovePerson = heroToCheck => {
+    const heroCheck = heroes.find(({ hero }) => hero.id === heroToCheck.id);
+    if (heroCheck) {
+      setHeroes(p => p.filter(({ hero }) => hero.id !== heroToCheck.id));
+      setIsInLs(false);
+      toast.error('Person has deleted from Favorites');
+    } else {
+      const newHero = { id: userId, hero: heroToCheck };
+      setHeroes(p => [...p, newHero]);
+      setIsInLs(true);
+      toast.success('Person has added to Favorites');
+    }
   };
 
-  console.log(personId);
+  const handleModal = idPer => {
+    setPersonId(idPer);
+    setModalActive(!true);
+    const heroCheck = heroes.find(({ hero }) => hero.id === idPer);
+    heroCheck ? setIsInLs(true) : setIsInLs(false);
+  };
+
   return (
     <Container
       style={{
@@ -36,7 +62,7 @@ export const AllPersons = ({ isLoading, students }) => {
           <tbody>
             {students.map(student => (
               <ItemsPersons
-                openModal={handleClick}
+                openModal={handleModal}
                 key={nanoid(11)}
                 studentData={student}
               />
@@ -46,7 +72,14 @@ export const AllPersons = ({ isLoading, students }) => {
       )}
       <ScrollButton />
       <Modal active={modalActive} setActive={setModalActive}>
-        {personId && <PersonDetails chosen={personId} allStaff={students} />}
+        {personId && (
+          <PersonDetails
+            chosenId={personId}
+            allStaff={students}
+            isInLS={isInLs}
+            addRemovePerson={addRemovePerson}
+          />
+        )}
       </Modal>
     </Container>
   );

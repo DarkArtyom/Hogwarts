@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { AllStaff } from '../pages/AllStuff';
+import { AllStaff } from '../pages/AllStaff';
 import { NotFound } from '../pages/NotFound';
 import { SignIn } from './Auth/SignIn';
 import { SignUp } from './Auth/SignUp';
@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles, lightTheme, darkTheme } from '../Styles/GlobalStyles';
-
+import { Favorites } from '../pages/Favorites';
 export const App = () => {
   const [theme, setTheme] = useState('light');
   const isDarkTheme = theme === 'dark';
@@ -41,7 +41,16 @@ export const App = () => {
                   </ProtectedRoute>
                 }
               />
+              <Route
+                path="/favorites"
+                element={
+                  <ProtectedRoute>
+                    <Favorites />
+                  </ProtectedRoute>
+                }
+              />
             </Route>
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ThemeProvider>

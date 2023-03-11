@@ -11,9 +11,13 @@ import {
   Img,
 } from './StyledPersonDetails';
 
-export const PersonDetails = ({ chosen, allStaff }) => {
-  const chosenHero = allStaff.find(({ id }) => id === chosen);
-
+export const PersonDetails = ({
+  chosenId,
+  allStaff,
+  isInLS,
+  addRemovePerson,
+}) => {
+  const chosenHero = allStaff.find(({ id }) => id === chosenId);
   const {
     image,
     name,
@@ -71,13 +75,17 @@ export const PersonDetails = ({ chosen, allStaff }) => {
             </p>
           </ItemDetails>
         </ListDetails>
-        <ButtonAddRemove>Add to Favorites</ButtonAddRemove>
+        <ButtonAddRemove onClick={() => addRemovePerson(chosenHero)}>
+          {!isInLS ? 'Add to Favorites' : 'Delete from Favorites'}
+        </ButtonAddRemove>
       </BoxListDetails>
     </WrapDetails>
   );
 };
 
 PersonDetails.propTypes = {
-  chosen: PropTypes.string,
+  chosenId: PropTypes.string,
   allStaff: PropTypes.array,
+  addRemovePerson: PropTypes.func,
+  isInLS: PropTypes.bool,
 };
