@@ -33,6 +33,7 @@ export const Nav = styled.nav`
 `;
 
 export const StyledLink = styled(NavLink)`
+  width: 116px;
   text-decoration: none;
   display: inline-block;
   background-color: transparent;
@@ -49,6 +50,7 @@ export const StyledLink = styled(NavLink)`
   overflow: hidden;
   letter-spacing: 0.02em;
   transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-align: center;
 
   &::before {
     content: '';
@@ -81,6 +83,7 @@ export const StyledLink = styled(NavLink)`
     display: inline-block;
     padding: 15px 20px;
     letter-spacing: 2px;
+    width: 155px;
   }
 `;
 
@@ -89,17 +92,15 @@ export const LinkList = styled.ul`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 40px;
   @media screen and (min-width: 480px) {
     flex-direction: row;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     @media screen and (min-width: 768px) {
       flex-wrap: nowrap;
       justify-content: center;
-      margin-bottom: 30px;
     }
   }
 `;

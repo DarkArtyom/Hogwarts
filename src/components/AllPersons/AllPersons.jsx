@@ -12,7 +12,7 @@ import { TableHead } from './ItemsPersons/TableHead';
 import { parseDataFromLS } from '../../Services/LS/parseDataFromLS';
 import { userId } from '../../Services/auth/fireBase';
 import { toast } from 'react-toastify';
-
+import { SearchBar } from '../SearchBar/SearchBar';
 import { useUserAuth } from '../Auth/UserAuthContext';
 
 export const AllPersons = ({ isLoading, students }) => {
@@ -23,10 +23,19 @@ export const AllPersons = ({ isLoading, students }) => {
   const [modalActive, setModalActive] = useState(true);
   const { isInLs } = useUserAuth();
   const { setIsInLs } = useUserAuth();
+  const [filteredPersons, setFilteredPersons] = useState([]);
+  const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
     localStorage.setItem(`${userId}`, JSON.stringify(heroes));
   }, [heroes]);
+
+  useEffect(() => {
+    const filtered = students.filter(item =>
+      item.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFilteredPersons(filtered);
+  }, [searchText, students]);
 
   const addRemovePerson = heroToCheck => {
     const heroCheck = heroes.find(({ hero }) => hero.id === heroToCheck.id);
@@ -49,6 +58,15 @@ export const AllPersons = ({ isLoading, students }) => {
     heroCheck ? setIsInLs(true) : setIsInLs(false);
   };
 
+  const filteredFromInput = value => {
+    !value && setFilteredPersons(students);
+    // const filteredData = students.filter(item => {
+    //   return item.name.toLowerCase().includes(value.toLowerCase());
+    // });
+    setSearchText(value);
+    // setFilteredPersons(filteredData);
+  };
+
   return (
     <Container
       style={{
@@ -58,20 +76,28 @@ export const AllPersons = ({ isLoading, students }) => {
       }}
     >
       {isLoading ? (
-        <CircleLoader color="#36d7b7" />
+        <CircleLoader color="#085c4b" />
       ) : (
-        <Table>
-          <TableHead />
-          <tbody>
-            {students.map(student => (
-              <ItemsPersons
-                openModal={handleModal}
-                key={nanoid(11)}
-                studentData={student}
-              />
-            ))}
-          </tbody>
-        </Table>
+        <div>
+          <SearchBar filterData={filteredFromInput} />
+          <Table>
+            <TableHead />
+            {filteredPersons.length === 0 && (
+              <tr style={{ color: 'red', fontSize: '30px' }}>
+                Sorry, there is no matches
+              </tr>
+            )}
+            <tbody>
+              {filteredPersons.map(student => (
+                <ItemsPersons
+                  openModal={handleModal}
+                  key={nanoid(11)}
+                  studentData={student}
+                />
+              ))}
+            </tbody>
+          </Table>
+        </div>
       )}
       <ScrollButton />
       <Modal active={modalActive} setActive={setModalActive}>

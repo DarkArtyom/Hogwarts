@@ -37,5 +37,4 @@ export const Modal = ({ active, setActive, children }) => {
 Modal.propTypes = {
   active: PropTypes.bool,
   setActive: PropTypes.func,
-  children: PropTypes.object,
 };
