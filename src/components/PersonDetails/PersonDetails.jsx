@@ -36,7 +36,7 @@ export const PersonDetails = ({
       <ImgBox>
         <Img src={image ? image : defaultImage} alt={name} width={200} />
       </ImgBox>
-      <BoxListDetails className="modal_content">
+      <BoxListDetails>
         <TitleDetails>{name}</TitleDetails>
         <ListDetails>
           <ItemDetails>

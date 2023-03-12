@@ -17,7 +17,7 @@ export async function fetchGryffindor(signal) {
   }
 }
 
-export async function fetSlytherin(signal) {
+export async function fetchSlytherin(signal) {
   try {
     return await axios.get(API.slytherinHouse, { signal });
   } catch (error) {

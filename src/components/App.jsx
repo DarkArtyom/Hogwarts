@@ -1,5 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import { AllStaff } from '../pages/AllStaff';
+import { SlytherinPage } from '../pages/HousesPages/SlytherinPage';
+import { GryffindorPage } from '..//pages/HousesPages/GryffindorPage';
+import { RavenclawPage } from '..//pages/HousesPages/RavenclawPage';
+import { HufflepuffPage } from '..//pages/HousesPages/HufflepuffPage';
 import { NotFound } from '../pages/NotFound';
 import { SignIn } from './Auth/SignIn';
 import { SignUp } from './Auth/SignUp';
@@ -12,6 +16,7 @@ import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles, lightTheme, darkTheme } from '../Styles/GlobalStyles';
 import { Favorites } from '../pages/Favorites';
+
 export const App = () => {
   const [theme, setTheme] = useState('light');
   const isDarkTheme = theme === 'dark';
@@ -38,6 +43,38 @@ export const App = () => {
                 element={
                   <ProtectedRoute>
                     <AllStaff />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/slytherin"
+                element={
+                  <ProtectedRoute>
+                    <SlytherinPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/gryffindor"
+                element={
+                  <ProtectedRoute>
+                    <GryffindorPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/hufflepuff"
+                element={
+                  <ProtectedRoute>
+                    <HufflepuffPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/ravenclaw"
+                element={
+                  <ProtectedRoute>
+                    <RavenclawPage />
                   </ProtectedRoute>
                 }
               />

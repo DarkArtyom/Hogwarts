@@ -6,7 +6,7 @@ export const ItemsPersons = ({ studentData, openModal }) => {
     studentData;
 
   return (
-    <tr onClick={() => openModal(id)} className="student-table-name" id={id}>
+    <tr onClick={() => openModal(id)}>
       <Td>
         <LinkStyled>{name}</LinkStyled>
       </Td>
@@ -40,7 +40,7 @@ export const ItemsPersons = ({ studentData, openModal }) => {
       </Td>
       <Td>
         {hogwartsStaff ? (
-          <LinkStyled>Stuff</LinkStyled>
+          <LinkStyled>Staff</LinkStyled>
         ) : (
           <LinkStyled>Student</LinkStyled>
         )}

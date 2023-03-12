@@ -16,6 +16,8 @@ export const Img = styled.img`
     width: 100px;
     height: 130px;
   }
+  width: 250px;
+  height: 370px;
 `;
 
 export const BoxListDetails = styled.div`

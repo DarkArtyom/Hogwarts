@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { fetchAllStudents } from '../Services/fetches';
-import { AllPersons } from '../components/AllPersons/AllPersons';
+import { fetchHufflepuff } from '../../Services/fetches';
+import { AllPersons } from '../../components/AllPersons/AllPersons';
 
-export const AllStaff = () => {
+export const HufflepuffPage = () => {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -12,7 +12,7 @@ export const AllStaff = () => {
 
     (async function () {
       try {
-        const dataFetch = await fetchAllStudents(signal);
+        const dataFetch = await fetchHufflepuff(signal);
         if (!dataFetch) {
           return;
         }

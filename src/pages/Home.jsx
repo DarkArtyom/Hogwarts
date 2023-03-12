@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 export const Home = ({ toggleTheme }) => {
   const { logOut, user } = useUserAuth();
   const navigate = useNavigate();
-  console.log(user);
+
   const handleLogout = async () => {
     try {
       await logOut();

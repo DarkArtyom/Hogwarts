@@ -13,13 +13,16 @@ import { parseDataFromLS } from '../../Services/LS/parseDataFromLS';
 import { userId } from '../../Services/auth/fireBase';
 import { toast } from 'react-toastify';
 
+import { useUserAuth } from '../Auth/UserAuthContext';
+
 export const AllPersons = ({ isLoading, students }) => {
-  const [personId, setPersonId] = useState('');
   const [heroes, setHeroes] = useState(() =>
     parseDataFromLS(`${userId}`, userId)
   );
-  const [isInLs, setIsInLs] = useState(false);
+  const [personId, setPersonId] = useState('');
   const [modalActive, setModalActive] = useState(true);
+  const { isInLs } = useUserAuth();
+  const { setIsInLs } = useUserAuth();
 
   useEffect(() => {
     localStorage.setItem(`${userId}`, JSON.stringify(heroes));
@@ -57,7 +60,7 @@ export const AllPersons = ({ isLoading, students }) => {
       {isLoading ? (
         <CircleLoader color="#36d7b7" />
       ) : (
-        <Table className="table_sort" id="table">
+        <Table>
           <TableHead />
           <tbody>
             {students.map(student => (

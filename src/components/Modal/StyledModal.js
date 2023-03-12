@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 export const BackDrop = styled.div`
   &.backdrop {
     position: fixed;

@@ -21,8 +21,9 @@ export const GlobalStyles = createGlobalStyle`
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    overflow-y: auto;
     color: ${({ theme }) => theme.text};
+
+    overflow-y: auto;
 
     @media screen and (min-width: 480px) {
       background-image: url(${({ theme }) => theme.body});
@@ -62,10 +63,4 @@ export const darkTheme = {
   buttonText: '#61677c',
   tableColor: '#F0FFFF',
   tableHeadColor: '#5F9EA0',
-};
-
-export const flexCenter = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
 };
