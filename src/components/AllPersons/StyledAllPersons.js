@@ -4,6 +4,12 @@ export const Table = styled.table`
   border-collapse: collapse;
 `;
 
+export const TextIfNoData = styled.p`
+  color: red;
+  font-size: 30px;
+  text-align: center;
+`;
+
 export const Th = styled.th`
   color: #ffebcd;
   background: ${({ theme }) => theme.tableHeadColor};

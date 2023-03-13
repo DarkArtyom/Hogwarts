@@ -7,6 +7,6 @@ Plans to Do:
 6. Rewrite with Redux. ?
 
 Plans to Fix: 
-1. Registration check with valid emails. 
+1. Registration check with valid emails. +-
 2. Clear consols. +
 3. Stop Scroll when Modal Open.+

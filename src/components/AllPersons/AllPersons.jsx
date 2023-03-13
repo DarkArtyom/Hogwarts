@@ -2,7 +2,7 @@ import { Container } from '../Layout/Layout.styled';
 import CircleLoader from 'react-spinners/CircleLoader';
 import PropTypes from 'prop-types';
 import { ItemsPersons } from './ItemsPersons/ItemsPersons';
-import { Table } from './StyledAllPersons';
+import { Table, TextIfNoData } from './StyledAllPersons';
 import { ScrollButton } from '../../Services/ButtonUp/Button.Up';
 import { nanoid } from 'nanoid';
 import { Modal } from '../Modal/Modal';
@@ -60,11 +60,7 @@ export const AllPersons = ({ isLoading, students }) => {
 
   const filteredFromInput = value => {
     !value && setFilteredPersons(students);
-    // const filteredData = students.filter(item => {
-    //   return item.name.toLowerCase().includes(value.toLowerCase());
-    // });
     setSearchText(value);
-    // setFilteredPersons(filteredData);
   };
 
   return (
@@ -80,13 +76,11 @@ export const AllPersons = ({ isLoading, students }) => {
       ) : (
         <div>
           <SearchBar filterData={filteredFromInput} />
+          {filteredPersons.length === 0 && (
+            <TextIfNoData>Sorry, there is no matches</TextIfNoData>
+          )}
           <Table>
-            <TableHead />
-            {filteredPersons.length === 0 && (
-              <tr style={{ color: 'red', fontSize: '30px' }}>
-                Sorry, there is no matches
-              </tr>
-            )}
+            {filteredPersons.length !== 0 && <TableHead />}
             <tbody>
               {filteredPersons.map(student => (
                 <ItemsPersons
