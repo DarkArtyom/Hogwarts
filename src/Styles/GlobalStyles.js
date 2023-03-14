@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 100vh;
     font-size: normal;
     font-size: 14px;
-    background-image: url(${({ theme }) => theme.body});
+    background-image: ${({ theme }) => theme.body};
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,7 +56,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  body: './images/dining-room-web-min.jpg',
+  body: '/images/dining-room-web-min.jpg',
   text: '#f1f1f1',
   button: '#ebecf0',
   buttonText: '#61677c',
