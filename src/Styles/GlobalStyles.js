@@ -15,7 +15,6 @@ export const GlobalStyles = createGlobalStyle`
     height: 100vh;
     font-size: normal;
     font-size: 14px;
-    //background-color: ${({ theme }) => theme.text};
     background-image: url(${({ theme }) => theme.body});
     background-position: center;
     background-repeat: no-repeat;
