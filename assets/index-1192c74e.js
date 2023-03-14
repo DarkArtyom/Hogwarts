@@ -1909,7 +1909,7 @@ Error generating stack: `+o.message+`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: url('/images/dobby-ava.jpg');
+  background: url("https://files.fm/thumb_show.php?i=m6a6xfvg7");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
