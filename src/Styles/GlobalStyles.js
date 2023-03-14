@@ -11,8 +11,6 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    height: 100vh;
-    font-size: normal;
     font-size: 14px;
     background-color: '#61677c';
     background-image: url(${({ theme }) => theme.body});
@@ -22,10 +20,6 @@ export const GlobalStyles = createGlobalStyle`
     background-attachment: fixed;
     color: ${({ theme }) => theme.text};
     overflow-y: auto;
-
-    @media screen and (min-width: 480px) {
-      background-position: cover;
-    }
   }
 
   h1,
