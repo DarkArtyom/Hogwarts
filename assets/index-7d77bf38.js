@@ -1984,6 +1984,7 @@ Error generating stack: `+o.message+`
     height: 100vh;
     font-size: normal;
     font-size: 14px;
+    background-color: '#61677c';
     background-image: url(${({theme:e})=>e.body});
     background-position: center;
     background-repeat: no-repeat;
@@ -1993,7 +1994,6 @@ Error generating stack: `+o.message+`
     overflow-y: auto;
 
     @media screen and (min-width: 480px) {
-      background-image: url(${({theme:e})=>e.body});
       background-position: cover;
     }
   }
@@ -2012,7 +2012,7 @@ Error generating stack: `+o.message+`
     margin: 0;
     padding: 0;
     list-style: none;
-  }`,WT={body:"https://files.fm/thumb_show.php?i=qgexqfmtv",text:"#121620",button:"#61677c",buttonText:"#ebecf0",tableColor:"#FFEBCD",tableHeadColor:"#008b8b"},GT={body:"https://files.fm/u/yxkgsmnsx#/view/dining-room-web-min.jpg",text:"#f1f1f1",button:"#ebecf0",buttonText:"#61677c",tableColor:"#F0FFFF",tableHeadColor:"#5F9EA0"},KT=H.ul`
+  }`,WT={body:"https://files.fm/thumb_show.php?i=qgexqfmtv",text:"#121620",button:"#61677c",buttonText:"#ebecf0",tableColor:"#FFEBCD",tableHeadColor:"#008b8b"},GT={body:"https://files.fm/thumb_show.php?i=ynn8rjc4z",text:"#f1f1f1",button:"#ebecf0",buttonText:"#61677c",tableColor:"#F0FFFF",tableHeadColor:"#5F9EA0"},KT=H.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
