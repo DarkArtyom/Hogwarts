@@ -2013,7 +2013,7 @@ Error generating stack: `+o.message+`
     margin: 0;
     padding: 0;
     list-style: none;
-  }`,WT={body:"../../images/bg-castle-web-min.jpg",text:"#121620",button:"#61677c",buttonText:"#ebecf0",tableColor:"#FFEBCD",tableHeadColor:"#008b8b"},GT={body:"../../images/dining-room-web-min.jpg",text:"#f1f1f1",button:"#ebecf0",buttonText:"#61677c",tableColor:"#F0FFFF",tableHeadColor:"#5F9EA0"},KT=H.ul`
+  }`,WT={body:"../../images/bg-castle-web-min.jpg",text:"#121620",button:"#61677c",buttonText:"#ebecf0",tableColor:"#FFEBCD",tableHeadColor:"#008b8b"},GT={body:"./images/dining-room-web-min.jpg",text:"#f1f1f1",button:"#ebecf0",buttonText:"#61677c",tableColor:"#F0FFFF",tableHeadColor:"#5F9EA0"},KT=H.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
