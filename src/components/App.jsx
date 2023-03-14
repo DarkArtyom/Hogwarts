@@ -28,10 +28,10 @@ export const App = () => {
         <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
           <GlobalStyles />
           <Routes>
-            <Route path="/signin" element={<SignIn />} />
+            <Route path="/" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route
-              path="/"
+              path="/home"
               element={
                 <ProtectedRoute>
                   <Home toggleTheme={toggleTheme} />
@@ -39,7 +39,7 @@ export const App = () => {
               }
             >
               <Route
-                path="/all-staff"
+                path="all-staff"
                 element={
                   <ProtectedRoute>
                     <AllStaff />
@@ -47,7 +47,7 @@ export const App = () => {
                 }
               />
               <Route
-                path="/slytherin"
+                path="slytherin"
                 element={
                   <ProtectedRoute>
                     <SlytherinPage />
@@ -55,7 +55,7 @@ export const App = () => {
                 }
               />
               <Route
-                path="/gryffindor"
+                path="gryffindor"
                 element={
                   <ProtectedRoute>
                     <GryffindorPage />
@@ -63,7 +63,7 @@ export const App = () => {
                 }
               />
               <Route
-                path="/hufflepuff"
+                path="hufflepuff"
                 element={
                   <ProtectedRoute>
                     <HufflepuffPage />
@@ -71,7 +71,7 @@ export const App = () => {
                 }
               />
               <Route
-                path="/ravenclaw"
+                path="ravenclaw"
                 element={
                   <ProtectedRoute>
                     <RavenclawPage />
@@ -79,7 +79,7 @@ export const App = () => {
                 }
               />
               <Route
-                path="/favorites"
+                path="favorites"
                 element={
                   <ProtectedRoute>
                     <Favorites />

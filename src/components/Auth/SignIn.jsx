@@ -23,7 +23,7 @@ export const SignIn = () => {
 
     try {
       await logIn(email, password);
-      navigate('/');
+      navigate('/home');
       toast.success('Yoy have successful signed in');
     } catch (err) {
       console.log(err);
