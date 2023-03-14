@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import backgroundImage from '/src/images/bg-castle-web-min.jpg';
 export const GlobalStyles = createGlobalStyle`
   html {
     box-sizing: border-box;
@@ -14,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 100vh;
     font-size: normal;
     font-size: 14px;
-    background-image: url("${({ theme }) => theme.body");
+    background-image: url(${({ theme }) => theme.body);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -45,7 +46,7 @@ export const GlobalStyles = createGlobalStyle`
   }`;
 
 export const lightTheme = {
-  body: '../images/bg-castle-web-min.jpg',
+  body: backgroundImage,
   text: '#121620',
   button: '#61677c',
   buttonText: '#ebecf0',
