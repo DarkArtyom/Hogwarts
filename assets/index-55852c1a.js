@@ -1984,7 +1984,7 @@ Error generating stack: `+o.message+`
     height: 100vh;
     font-size: normal;
     font-size: 14px;
-    background-image: ${({theme:e})=>e.body};
+    background-image: url(${({theme:e})=>e.body});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
