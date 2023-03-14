@@ -1981,8 +1981,6 @@ Error generating stack: `+o.message+`
 
   body {
     margin: 0;
-    height: 100vh;
-    font-size: normal;
     font-size: 14px;
     background-color: '#61677c';
     background-image: url(${({theme:e})=>e.body});
@@ -1992,10 +1990,6 @@ Error generating stack: `+o.message+`
     background-attachment: fixed;
     color: ${({theme:e})=>e.text};
     overflow-y: auto;
-
-    @media screen and (min-width: 480px) {
-      background-position: cover;
-    }
   }
 
   h1,
