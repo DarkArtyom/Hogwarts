@@ -54,7 +54,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  body: '/src/images/dining-room-web-min.jpg',
+  body: './src/images/dining-room-web-min.jpg',
   text: '#f1f1f1',
   button: '#ebecf0',
   buttonText: '#61677c',
