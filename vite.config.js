@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Hogwarts/signin/',
+  base: 'https://darkartyom.github.io/Hogwarts/signin',
   plugins: [react()],
 });
