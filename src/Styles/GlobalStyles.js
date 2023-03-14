@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 100vh;
     font-size: normal;
     font-size: 14px;
+    background-color: '#61677c';
     background-image: url(${({ theme }) => theme.body});
     background-position: center;
     background-repeat: no-repeat;
@@ -23,7 +24,6 @@ export const GlobalStyles = createGlobalStyle`
     overflow-y: auto;
 
     @media screen and (min-width: 480px) {
-      background-image: url(${({ theme }) => theme.body});
       background-position: cover;
     }
   }
@@ -54,7 +54,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  body: 'https://files.fm/u/yxkgsmnsx#/view/dining-room-web-min.jpg',
+  body: 'https://files.fm/thumb_show.php?i=ynn8rjc4z',
   text: '#f1f1f1',
   button: '#ebecf0',
   buttonText: '#61677c',
