@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const WrapBar = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const AwatarImg = styled.span`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: url('/images/dobby-ava.jpg');
+  background: url('https://files.fm/thumb_show.php?i=m6a6xfvg7');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -33,4 +33,22 @@ export const Button = styled.button`
 export const BarText = styled.p`
   font-size: 18px;
   margin-right: 10px;
+`;
+
+const slideIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+`;
+
+export const StyledDiv = styled.div`
+  animation: ${slideIn} 10s infinite;
 `;

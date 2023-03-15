@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+
 export const GlobalStyles = createGlobalStyle`
   html {
     box-sizing: border-box;
@@ -10,22 +11,16 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    height: 100vh;
-    font-size: normal;
+   margin: 0;
     font-size: 14px;
-    background-image: ${({ theme }) => theme.body};
+    background-color: '#61677c';
+    background-image: url(${({ theme }) => theme.body});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     color: ${({ theme }) => theme.text};
     overflow-y: auto;
-
-    @media screen and (min-width: 480px) {
-      background-image: url(${({ theme }) => theme.body});
-      background-position: cover;
-    }
   }
 
   h1,
@@ -45,7 +40,7 @@ export const GlobalStyles = createGlobalStyle`
   }`;
 
 export const lightTheme = {
-  body: '../images/bg-castle-web-min.jpg',
+  body: 'https://files.fm/thumb_show.php?i=qgexqfmtv',
   text: '#121620',
   button: '#61677c',
   buttonText: '#ebecf0',
@@ -54,7 +49,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  body: '/src/images/dining-room-web-min.jpg',
+  body: 'https://files.fm/thumb_show.php?i=ynn8rjc4z',
   text: '#f1f1f1',
   button: '#ebecf0',
   buttonText: '#61677c',

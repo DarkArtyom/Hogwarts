@@ -1,6 +1,14 @@
 import axios from 'axios';
 import { API } from './api';
 
+export async function fetchSpellBook(signal) {
+  try {
+    return await axios.get(API.allSpells, { signal });
+  } catch (error) {
+    console.error(`Error: ${error}`);
+  }
+}
+
 export async function fetchAllStudents(signal) {
   try {
     return await axios.get(API.allCharacters, { signal });

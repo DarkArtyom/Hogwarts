@@ -1,5 +1,5 @@
 import { Container } from '../Layout/Layout.styled';
-import { AwatarImg, Button, WrapBar, BarText } from './AppBarStyled';
+import { AwatarImg, Button, WrapBar, BarText, StyledDiv } from './AppBarStyled';
 
 import { ToggleSwitch } from '../../Services/Switch/ToggleSwitch';
 import PropTypes from 'prop-types';
@@ -13,7 +13,9 @@ export const AppBar = ({ user, logOut, theme }) => {
           <ToggleSwitch theme={theme} />
           <WrapBar>
             <BarText>{`Signed In as ${user.email}`}</BarText>
-            <AwatarImg></AwatarImg>
+            <StyledDiv>
+              <AwatarImg></AwatarImg>
+            </StyledDiv>
           </WrapBar>
           <Button onClick={logOut}>
             <ImExit />
