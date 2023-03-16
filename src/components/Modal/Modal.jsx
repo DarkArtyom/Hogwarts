@@ -2,6 +2,7 @@ import { BackDrop, StyledModal, ButtonExit } from './StyledModal';
 import { GiExitDoor } from 'react-icons/gi';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
+
 export const Modal = ({ active, setActive, children }) => {
   useEffect(() => {
     !active

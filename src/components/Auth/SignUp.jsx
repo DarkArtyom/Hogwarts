@@ -35,7 +35,7 @@ export const SignUp = () => {
       <Container>
         <WrapForm>
           <Title>Create a new Magic</Title>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={e => handleSubmit(e)}>
             <Label htmlFor="email">
               <StyledInput
                 name="email"

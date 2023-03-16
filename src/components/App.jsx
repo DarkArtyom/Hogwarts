@@ -4,10 +4,11 @@ import { SlytherinPage } from '../pages/HousesPages/SlytherinPage';
 import { GryffindorPage } from '..//pages/HousesPages/GryffindorPage';
 import { RavenclawPage } from '..//pages/HousesPages/RavenclawPage';
 import { HufflepuffPage } from '..//pages/HousesPages/HufflepuffPage';
-import { NotFound } from '../pages/NotFound';
 import { SignIn } from './Auth/SignIn';
 import { SignUp } from './Auth/SignUp';
 import { Home } from '../pages/Home';
+import { Favorites } from '../pages/Favorites';
+import { NotFound } from '../pages/NotFound';
 import { ProtectedRoute } from '../pages/ProtectedRoute';
 import { UserAuthContextProvider } from './Auth/UserAuthContext';
 import { ToastContainer } from 'react-toastify';
@@ -15,7 +16,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles, lightTheme, darkTheme } from '../Styles/GlobalStyles';
-import { Favorites } from '../pages/Favorites';
 
 export const App = () => {
   const [theme, setTheme] = useState('light');

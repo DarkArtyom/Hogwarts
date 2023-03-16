@@ -9,7 +9,7 @@ import {
 export const SpellsItems = ({ spell }) => {
   const { name, description } = spell;
   const [clickedSpell, setClickedSpell] = useState(false);
-  const handleSpellClick = e => {
+  const handleSpellClick = () => {
     !clickedSpell ? setClickedSpell(true) : setClickedSpell(false);
   };
 

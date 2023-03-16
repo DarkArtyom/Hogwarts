@@ -36,7 +36,7 @@ export const SignIn = () => {
       <Container>
         <WrapForm>
           <Title>Log In for Magic</Title>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={e => handleSubmit(e)}>
             <Label htmlFor="email">
               <StyledInput
                 name="email"

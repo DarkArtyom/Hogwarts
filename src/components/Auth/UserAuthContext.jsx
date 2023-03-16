@@ -6,12 +6,14 @@ import {
   signOut,
 } from 'firebase/auth';
 import { auth } from '/src/Services/auth/fireBase';
+import CircleLoader from 'react-spinners/CircleLoader';
 
 const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState({});
   const [isInLs, setIsInLs] = useState(false);
+  const [isPending, setIsPending] = useState(true);
 
   function logIn(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
@@ -25,8 +27,9 @@ export function UserAuthContextProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentuser => {
-      console.log('Auth', currentuser);
+      // console.log('Auth', currentuser);
       setUser(currentuser);
+      setIsPending(false);
     });
 
     return () => {
@@ -35,11 +38,25 @@ export function UserAuthContextProvider({ children }) {
   }, []);
 
   return (
-    <userAuthContext.Provider
-      value={{ user, logIn, signUp, logOut, isInLs, setIsInLs }}
-    >
-      {children}
-    </userAuthContext.Provider>
+    <>
+      {isPending ? (
+        <CircleLoader
+          style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50% -50%)',
+            color: '#085c4b',
+          }}
+        />
+      ) : (
+        <userAuthContext.Provider
+          value={{ user, logIn, signUp, logOut, isInLs, setIsInLs }}
+        >
+          {children}
+        </userAuthContext.Provider>
+      )}
+    </>
   );
 }
 

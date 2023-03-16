@@ -13,7 +13,7 @@ export const SearchBar = ({ filterData }) => {
         autocomplete="off"
         autoFocus
         placeholder="Search person by name"
-        onChange={handleSearchInput}
+        onChange={event => handleSearchInput(event)}
       />
     </SearchFormWrap>
   );
