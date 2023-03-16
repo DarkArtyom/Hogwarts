@@ -9,20 +9,19 @@ import { auth } from '/src/Services/auth/fireBase';
 import CircleLoader from 'react-spinners/CircleLoader';
 
 const userAuthContext = createContext();
-
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState({});
   const [isInLs, setIsInLs] = useState(false);
   const [isPending, setIsPending] = useState(true);
 
-  function logIn(email, password) {
-    return signInWithEmailAndPassword(auth, email, password);
+  async function logIn(email, password) {
+    return await signInWithEmailAndPassword(auth, email, password);
   }
-  function signUp(email, password) {
-    return createUserWithEmailAndPassword(auth, email, password);
+  async function signUp(email, password) {
+    return await createUserWithEmailAndPassword(auth, email, password);
   }
-  function logOut() {
-    return signOut(auth);
+  async function logOut() {
+    return await signOut(auth);
   }
 
   useEffect(() => {
