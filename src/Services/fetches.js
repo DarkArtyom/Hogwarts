@@ -1,6 +1,11 @@
 import axios from 'axios';
 import { API } from './api';
 
+export async function fetchMagic(signal, url){ try {return await axios.get(url, {signal}); }catch (error){console.error(`Error:${error}`);
+  }
+}
+
+// to remove :) 
 export async function fetchSpellBook(signal) {
   try {
     return await axios.get(API.allSpells, { signal });
